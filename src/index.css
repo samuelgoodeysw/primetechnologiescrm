@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Prime Technologies — corporate navy + gold */
+    --background: 0 0% 100%;
+    --foreground: 213 65% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 65% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 65% 12%;
+
+    /* Deep navy #0F2847 */
+    --primary: 213 65% 17%;
+    --primary-foreground: 40 30% 98%;
+
+    --secondary: 213 25% 96%;
+    --secondary-foreground: 213 65% 17%;
+
+    --muted: 213 20% 95%;
+    --muted-foreground: 213 15% 42%;
+
+    /* Gold accent #C9A961 */
+    --accent: 41 50% 59%;
+    --accent-foreground: 213 65% 12%;
+
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Status colors */
+    --success: 145 55% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 90% 50%;
+    --warning-foreground: 213 65% 12%;
+    --danger: 0 75% 48%;
+    --danger-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 88%;
+    --ring: 213 65% 17%;
+
+    --radius: 0.25rem;
+
+    /* Odoo-style surface */
+    --surface: 0 0% 100%;
+    --surface-alt: 220 14% 98%;
+    --surface-hover: 213 30% 96%;
+    --rule: 220 13% 91%;
+
+    /* Brand-specific */
+    --navy: 213 65% 17%;
+    --navy-deep: 213 70% 12%;
+    --navy-light: 213 50% 28%;
+    --gold: 41 50% 59%;
+    --gold-deep: 41 55% 45%;
+
+    --sidebar-background: 213 65% 17%;
+    --sidebar-foreground: 40 25% 92%;
+    --sidebar-primary: 41 50% 59%;
+    --sidebar-primary-foreground: 213 65% 12%;
+    --sidebar-accent: 213 55% 22%;
+    --sidebar-accent-foreground: 40 30% 98%;
+    --sidebar-border: 213 50% 25%;
+    --sidebar-ring: 41 50% 59%;
+
+    /* Gradients & shadows */
+    --gradient-navy: linear-gradient(135deg, hsl(213 70% 12%), hsl(213 60% 22%));
+    --gradient-gold: linear-gradient(135deg, hsl(41 55% 52%), hsl(41 60% 65%));
+    --shadow-card: 0 1px 3px 0 hsl(213 30% 15% / 0.06), 0 1px 2px -1px hsl(213 30% 15% / 0.06);
+    --shadow-elevated: 0 10px 30px -10px hsl(213 50% 20% / 0.18);
+    --shadow-hero: 0 25px 60px -20px hsl(213 70% 12% / 0.35);
+  }
+
+  .dark {
+    --background: 213 70% 8%;
+    --foreground: 40 25% 95%;
+    --card: 213 60% 12%;
+    --card-foreground: 40 25% 95%;
+    --popover: 213 60% 12%;
+    --popover-foreground: 40 25% 95%;
+    --primary: 41 50% 59%;
+    --primary-foreground: 213 65% 12%;
+    --secondary: 213 50% 18%;
+    --secondary-foreground: 40 25% 95%;
+    --muted: 213 50% 18%;
+    --muted-foreground: 213 15% 65%;
+    --accent: 41 50% 59%;
+    --accent-foreground: 213 65% 12%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 50% 22%;
+    --input: 213 50% 22%;
+    --ring: 41 50% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'tnum';
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  table { font-size: 13px; }
+  input, select, textarea, button { font-size: 13px; }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .text-navy { color: hsl(var(--navy)); }
+  .text-gold { color: hsl(var(--gold)); }
+  .bg-navy { background-color: hsl(var(--navy)); }
+  .bg-navy-deep { background-color: hsl(var(--navy-deep)); }
+  .bg-gold { background-color: hsl(var(--gold)); }
+  .border-navy { border-color: hsl(var(--navy)); }
+  .border-gold { border-color: hsl(var(--gold)); }
+
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
